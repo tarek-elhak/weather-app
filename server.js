@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 const port = 3000;
 const server = app.listen(port,()=> console.log(`server running on port: ${port}`));
 
+app.get("/", (re,res) => {
+    res.redirect("/index.htm");
+});
+
 // get the application data
 app.get("/data",(req,res)=>{
     res.send(projectData);
